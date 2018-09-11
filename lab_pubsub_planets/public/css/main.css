@@ -1,0 +1,65 @@
+html {
+  background: black;
+  color: white;
+}
+
+body {
+  font-family: sans-serif;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header header header header"
+                        "nav main main main";
+}
+
+header {
+  margin-left: 40px;
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+
+}
+
+section {
+  grid-area: main;
+
+}
+
+li {
+  list-style: none;
+}
+
+.list-image {
+    height: 300px;
+    width: auto;
+}
+
+@media screen and (max-width: 550px) {
+  .list-image {
+      display: none;
+  }
+}
+
+.planets-menu ol {
+  width: auto;
+}
+
+.planet-menu-item {
+    padding: 10px;
+    width: auto;
+    /* width: 200px; */
+}
+
+.planet-menu-item:hover {
+  cursor: pointer;
+  background: white;
+  color: black;
+}
+
+.planet-menu-item: {
+  background: orange;
+  color: black;
+}

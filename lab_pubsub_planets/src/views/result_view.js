@@ -11,14 +11,26 @@ ResultView.prototype.bindEvents = function(){
 };
 
 ResultView.prototype.render = function(planet){
-  const infoParagraph = document.createElement('p');
-  // infoParagraph.textContent = `The ${planet.name}, of class '${animal.class}', has a maximum speed of ${animal.maxSpeed} km/h.`;
-  infoParagraph.textContent = JSON.stringify(planet); //planet.name;//.toString();
+  const list = document.createElement('ol');
+  // list.classList.add("list");
+  list.id = "list";
+  const keys = Object.keys(planet);
+  for (let i = 0; i < keys.length-1; i++) {
+    let listItem = document.createElement('li');
+    listItem.textContent = `${keys[i].toUpperCase()}:  ${planet[keys[i]]}`
+    listItem.classList.add("list-item");
+    list.appendChild(listItem);
+  }
+  const image = document.createElement('img');
+  image.classList.add("list-image");
+  image.src = planet["image"];
+
   const parentElement = document.querySelector('section.planet-details');
   while (parentElement.firstChild) {
     parentElement.removeChild(parentElement.firstChild);
   }
-  parentElement.appendChild(infoParagraph);
+  parentElement.appendChild(list);
+  parentElement.appendChild(image);
 };
 
 module.exports = ResultView;

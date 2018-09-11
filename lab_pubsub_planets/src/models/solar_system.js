@@ -7,19 +7,19 @@ const SolarSystem = function(planets) {
 SolarSystem.prototype.bindEvents = function(){
   PubSub.subscribe('Planet:clicked', (event) => {
     const clickedPlanet = event.detail;
-    console.log("about to get planet details", event.detail);
+    // console.log("about to get planet details", event.detail);
     const planetDetails = this.getPlanetDetails(clickedPlanet);
-    console.log("got planet details", planetDetails);
+    // console.log("got planet details", planetDetails);
     this.publishPlanetDetails(planetDetails);
   });
 };
 
 SolarSystem.prototype.getPlanetDetails = function(clickedPlanet){
-  console.log("this.planets:", this.planets);
-  console.log("clickedPlanet:", clickedPlanet);
-  console.log("name:", this.planets[0].name);
+  // console.log("this.planets:", this.planets);
+  // console.log("clickedPlanet:", clickedPlanet);
+  // console.log("name:", this.planets[0].name);
   const selectedPlanet = this.planets.find((planet) => {return planet.name === clickedPlanet;});
-  console.log("selectedPlanet:", selectedPlanet);
+  // console.log("selectedPlanet:", selectedPlanet);
   return selectedPlanet;
 };
 

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const planetsDataModel = new SolarSystem(planetsData);
   planetsDataModel.bindEvents();
-  console.log(planetsDataModel.planets);
+  // console.log(planetsDataModel.planets);
 
   const resultView = new ResultView();
   resultView.bindEvents();
